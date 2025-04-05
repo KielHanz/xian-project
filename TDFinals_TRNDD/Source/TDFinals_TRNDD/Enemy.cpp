@@ -6,7 +6,7 @@
 #include "Components/StaticMeshComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "EnemyAIController.h"
-#include "TDGameMode.h"
+#include "GameModeTD.h"
 
 // Sets default values
 AEnemy::AEnemy()
@@ -56,7 +56,7 @@ void AEnemy::Initialize()
 void AEnemy::OnEnemyDeath()
 {
 	//OnDeath.Broadcast(this);
-	ATDGameMode* GameMode = Cast<ATDGameMode>(GetWorld()->GetAuthGameMode());
+	AGameModeTD* GameMode = Cast<AGameModeTD>(GetWorld()->GetAuthGameMode());
 	GameMode->EnemyAliveList.Remove(this);
 	this->Destroy();
 }

@@ -2,6 +2,7 @@
 
 
 #include "TDGameMode.h"
+#include "WaveData.h"
 
 void ATDGameMode::BeginPlay()
 {

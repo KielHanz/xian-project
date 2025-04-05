@@ -5,7 +5,7 @@
 #include "Enemy.h"
 #include "HealthComponent.h"
 #include "Components/StaticMeshComponent.h"
-#include "TDGameMode.h"
+#include "GameModeTD.h"
 
 // Sets default values
 ASpawner::ASpawner()
@@ -36,7 +36,7 @@ AEnemy* ASpawner::InitializeEnemySpawn(TSubclassOf<AEnemy> EnemyClass, int Hp)
 	if (EnemyClass)
 	{
 		AEnemy* EnemyUnit = GetWorld()->SpawnActor<AEnemy>(EnemyClass, GetActorTransform());
-		ATDGameMode* GameMode = Cast<ATDGameMode>(GetWorld()->GetAuthGameMode());
+		AGameModeTD* GameMode = Cast<AGameModeTD>(GetWorld()->GetAuthGameMode());
 
 		if (EnemyUnit)
 		{
