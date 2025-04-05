@@ -6,7 +6,7 @@
 #include "GameFramework/Character.h"
 #include "Enemy.generated.h"
 
-//DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FDeathEvent, AEnemy*, Enemy);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FDeathEvent, AEnemy*, Enemy);
 
 UCLASS()
 class TDFINALS_TRNDD_API AEnemy : public ACharacter
@@ -35,8 +35,8 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
-	//UPROPERTY(BlueprintAssignable, BlueprintCallable)
-	//FDeathEvent OnDeath;
+	UPROPERTY(BlueprintAssignable, BlueprintCallable)
+	FDeathEvent OnDeath;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	float MoveSpeed;

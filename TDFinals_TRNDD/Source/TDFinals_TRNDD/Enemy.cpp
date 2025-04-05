@@ -53,9 +53,10 @@ void AEnemy::Initialize()
 	GetCharacterMovement()->MaxWalkSpeed = MoveSpeed;
 }
 
+UFUNCTION()
 void AEnemy::OnEnemyDeath()
 {
-	//OnDeath.Broadcast(this);
+	OnDeath.Broadcast(this);
 	AGameModeTD* GameMode = Cast<AGameModeTD>(GetWorld()->GetAuthGameMode());
 	GameMode->EnemyAliveList.Remove(this);
 	this->Destroy();
