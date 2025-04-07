@@ -6,6 +6,8 @@
 #include "GameFramework/Actor.h"
 #include "Tower.generated.h"
 
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnShootEvent, AProjectile*, Projectile);
+
 UCLASS()
 class TDFINALS_TRNDD_API ATower : public AActor
 {
@@ -50,6 +52,9 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 	void UpdateTurretRotation(float deltaSeconds);
+
+	UPROPERTY(BlueprintAssignable, BlueprintCallable)
+	FOnShootEvent OnShoot;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	TArray<class AEnemy*> EnemyInRangeList;

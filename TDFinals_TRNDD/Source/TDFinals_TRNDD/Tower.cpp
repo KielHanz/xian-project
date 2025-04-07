@@ -103,6 +103,7 @@ void ATower::Shoot(TSubclassOf<class AProjectile> projectile, float deltaTime)
 			projectileActor->BaseDamage = this->Damage;
 		}
 
+		OnShoot.Broadcast(projectileActor);
 		DelayFireRate = FireRate;
 	}
 }

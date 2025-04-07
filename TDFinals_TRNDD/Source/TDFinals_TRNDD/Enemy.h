@@ -42,7 +42,7 @@ public:
 	float MoveSpeed;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	float IsFlyType;
+	bool IsFlyType;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	float GoldDrop;
